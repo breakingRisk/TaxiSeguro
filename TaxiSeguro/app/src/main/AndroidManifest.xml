@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".pedirTaxi" >
         </activity>
+        <activity android:name=".Perfil" >
+        </activity>
     </application>
 
 </manifest>
