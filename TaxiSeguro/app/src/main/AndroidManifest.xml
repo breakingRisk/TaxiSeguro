@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".pedirTaxi" >
         </activity>
+        <activity android:name=".Inicio" >
+        </activity>
     </application>
 
 </manifest>
