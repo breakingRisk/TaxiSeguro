@@ -1,13 +1,13 @@
 package com.example.magdiel.taxiseguro;
 
-import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class pedirTaxi extends Activity {
+public class Password extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pedir_taxi);
+        setContentView(R.layout.activity_password);
     }
 }

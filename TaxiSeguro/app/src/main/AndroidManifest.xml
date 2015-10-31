@@ -19,6 +19,10 @@
         </activity>
         <activity android:name=".Perfil" >
         </activity>
+        <activity android:name=".Password" >
+        </activity>
+        <activity android:name=".Modifica" >
+        </activity>
     </application>
 
 </manifest>
