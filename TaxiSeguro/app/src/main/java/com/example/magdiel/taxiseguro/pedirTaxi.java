@@ -1,14 +1,14 @@
 package com.example.magdiel.taxiseguro;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-public class pedirTaxi extends AppCompatActivity {
+public class pedirTaxi extends Activity {
 
     ImageButton b1;
     ImageButton b2;

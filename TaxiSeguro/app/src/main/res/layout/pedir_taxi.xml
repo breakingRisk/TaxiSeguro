@@ -8,7 +8,8 @@
     android:paddingTop="0dp"
     android:paddingBottom="0dp"
     android:background="@drawable/map_bg"
-    tools:context="com.example.magdiel.taxiseguro.pedirTaxi">
+    tools:context="com.example.magdiel.taxiseguro.pedirTaxi"
+    android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
 
     <ImageButton
         android:id="@+id/locate"
