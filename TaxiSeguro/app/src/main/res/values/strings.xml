@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">TaxiSeguro</string>
     <string name="title_activity_modifica">Modifica</string>
+    <string name="nombre">Nombre</string>
+    <string name="telefono">Teléfono</string>
+    <string name="correo">Correo</string>
 </resources>

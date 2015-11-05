@@ -16,13 +16,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Nombre"
         android:ems="10"
         android:id="@+id/editText"
         android:background="?android:attr/selectableItemBackground"
         android:layout_marginTop="165dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:hint="@string/nombre" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -31,10 +31,10 @@
         android:ems="10"
         android:id="@+id/editText2"
         android:background="?android:attr/selectableItemBackground"
-        android:text="Correo"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_alignStart="@+id/editText"
+        android:hint="@string/correo" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -43,11 +43,11 @@
         android:ems="10"
         android:id="@+id/editText3"
         android:background="?android:attr/selectableItemBackground"
-        android:text="Telefono"
         android:layout_below="@+id/editText2"
         android:layout_alignLeft="@+id/editText2"
         android:layout_alignStart="@+id/editText2"
-        android:layout_marginTop="56dp" />
+        android:layout_marginTop="56dp"
+        android:hint="@string/telefono" />
 
     <ImageView
         android:layout_width="wrap_content"
