@@ -14,12 +14,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         Button pedir = (Button)findViewById( R.id.pedir );
-
+        Button tulogin = (Button)findViewById( R.id.login );
         pedir.setOnClickListener(this);
-    }
+        tulogin.setOnClickListener(this);
+}
 
     public void onClick(View view) {
-        Intent abrir = new Intent(this, pedirTaxi.class);
-        startActivity(abrir);
+        //Intent abrir = new Intent(this, pedirTaxi.class);
+        //startActivity(abrir);
+        Intent to_login = new Intent(this, Login.class);
+        startActivity(to_login);
     }
 }
