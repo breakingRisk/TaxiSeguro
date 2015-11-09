@@ -4,4 +4,7 @@
     <string name="nombre">Nombre</string>
     <string name="telefono">Teléfono</string>
     <string name="correo">Correo</string>
+    <string name="contrasenia_actual">Contraseña Actual</string>
+    <string name="contrasenia_nueva">Contraseña Nueva</string>
+    <string name="contrasenia_nueva_de_nuevo">Confirma</string>
 </resources>
