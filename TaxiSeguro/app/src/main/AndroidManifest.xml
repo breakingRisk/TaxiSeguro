@@ -23,6 +23,8 @@
         </activity>
         <activity android:name=".Modifica" >
         </activity>
+        <activity android:name=".Perfil1" >
+        </activity>
     </application>
 
 </manifest>
