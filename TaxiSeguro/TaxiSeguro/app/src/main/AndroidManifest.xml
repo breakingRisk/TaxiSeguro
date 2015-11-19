@@ -19,6 +19,10 @@
         </activity>
         <activity android:name=".Registro" >
         </activity>
+        <activity android:name=".Registro2" >
+        </activity>
+        <activity android:name=".Login" >
+        </activity>
     </application>
 
 </manifest>
