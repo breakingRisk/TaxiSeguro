@@ -13,7 +13,7 @@ public class Modifica extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modifica);
 
-        Button b_modifica_contraseñia = (Button) findViewById(R.id.cambia_password);
+        Button b_modifica_contraseñia = (Button) findViewById(R.id.cambia_contrasenia);
         b_modifica_contraseñia.setOnClickListener(this);
     }
     public void onClick(View view) {

@@ -7,7 +7,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.magdiel.taxiseguro.Perfil1"
     android:orientation="vertical"
-    android:background="#FFF2E6">
+    android:background="#e0f2f1">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -37,7 +37,7 @@
                 android:textSize="20dp"
                 android:padding="15sp"
                 android:layout_margin="10sp"
-                android:textColor="#EF779B" />
+                android:textColor="#000000" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
                 android:textSize="20dp"
                 android:padding="15dp"
                 android:layout_margin="10sp"
-                android:textColor="#EF779B" />
+                android:textColor="#000000" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -57,19 +57,19 @@
                 android:textSize="20dp"
                 android:padding="10dp"
                 android:layout_margin="15sp"
-                android:textColor="#EF779B" />
+                android:textColor="#000000" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Modificar"
                 android:id="@+id/modificar"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="#1de9b6"
                 android:textSize="18dp"
                 android:padding="15dp"
                 android:layout_margin="30sp"
                 android:layout_gravity="right"
-                android:textColor="#EF779B" />
+                android:textColor="#000000" />
 
         </LinearLayout>
 
