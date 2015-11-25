@@ -7,48 +7,82 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     android:paddingBottom="0dp"
-    android:background="@drawable/map_bg"
+    android:background="@color/blanco"
     tools:context="com.example.magdiel.taxiseguro.pedirTaxi"
     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
     android:orientation="vertical">
+
+    <!-- App Bar -->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!-- Toolbar -->
+        <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/topBar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
     
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:scrollbars="none">
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/locatePop"
-                android:layout_width="@dimen/fab_button_diameter"
-                android:layout_height="@dimen/fab_button_diameter"
-                android:background="@drawable/fab_shape"
-                android:src="@drawable/map_icon"
-                android:tint="@android:color/white"
-                android:layout_marginTop="84dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignLeft="@+id/taxi"
-                android:layout_alignStart="@+id/taxi" />
+            <TableLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/dirOr"
-                android:textColor="@color/negro"
-                android:textSize="22sp"
-                android:gravity="center"/>
+                <TableRow
+                    android:layout_marginTop="30dp">
+                    <ImageButton
+                        android:id="@+id/locatePop"
+                        android:layout_width="@dimen/fab_button_diameter"
+                        android:layout_height="@dimen/fab_button_diameter"
+                        android:background="@drawable/fab_shape"
+                        android:src="@drawable/map_icon"
+                        android:tint="@android:color/white"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignLeft="@+id/taxi"
+                        android:layout_alignStart="@+id/taxi" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dirOr"
+                        android:textColor="@color/negro"
+                        android:textSize="22sp"
+                        android:gravity="center"
+                        android:padding="18dp"/>
+
+                </TableRow>
+
+            </TableLayout>
 
             <LinearLayout
                 android:id="@+id/locating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:layout_margin="15dp"
+                android:padding="15dp">
 
                 <EditText android:id="@+id/txtCalle"
                     android:layout_height="wrap_content"
@@ -71,8 +105,8 @@
                 <TextView android:id="@+id/ubicarme"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dip"
-                    android:layout_marginBottom="40dip"
+                    android:layout_marginTop="20dip"
+                    android:layout_marginBottom="20dip"
                     android:text="Ubicarme!"
                     android:gravity="center"
                     android:textSize="20dip"
@@ -83,36 +117,55 @@
                     android:layout_height="fill_parent"
                     android:text="Listo"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/borde1"
+                    android:textColor="@color/negro"
+                    android:padding="15dp"
+                    android:textSize="22sp"/>
 
             </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/DestinoPop"
-                android:layout_width="@dimen/fab_button_diameter"
-                android:layout_height="@dimen/fab_button_diameter"
-                android:background="@drawable/fab_shape"
-                android:src="@drawable/map_icon"
-                android:tint="@android:color/white"
-                android:layout_marginTop="84dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignLeft="@+id/taxi"
-                android:layout_alignStart="@+id/taxi" />
+            <TableLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/dirDes"
-                android:textColor="@color/negro"
-                android:textSize="22sp"
-                android:gravity="center"/>
+                <TableRow
+                    android:layout_marginTop="30dp">
+                    <ImageButton
+                        android:id="@+id/DestinoPop"
+                        android:layout_width="@dimen/fab_button_diameter"
+                        android:layout_height="@dimen/fab_button_diameter"
+                        android:background="@drawable/fab_shape"
+                        android:src="@drawable/map_icon"
+                        android:tint="@android:color/white"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignLeft="@+id/taxi"
+                        android:layout_alignStart="@+id/taxi" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dirDes"
+                        android:textColor="@color/negro"
+                        android:textSize="22sp"
+                        android:gravity="center"
+                        android:padding="18dp"/>
+
+                </TableRow>
+
+            </TableLayout>
 
             <LinearLayout
                 android:id="@+id/destino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:layout_margin="15dp"
+                android:padding="15dp">
 
                 <EditText android:id="@+id/txtCalleD"
                     android:layout_height="wrap_content"
@@ -137,18 +190,33 @@
                     android:layout_height="fill_parent"
                     android:text="Listo"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/borde1"
+                    android:textColor="@color/negro"
+                    android:padding="15dp"
+                    android:textSize="22sp"
+
+                    />
 
             </LinearLayout>
-
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:text="Pedir mi taxi"
-                android:layout_marginLeft="0dp"
-                android:layout_marginRight="0dp"/>
-
         </LinearLayout>
-
     </ScrollView>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Pedir mi taxi"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="#00bfa5"
+            android:layout_gravity="bottom"
+            android:padding="15dp"
+            android:textSize="24sp"
+            android:textColor="@color/blanco"/>
+
+    </LinearLayout>
 </LinearLayout>

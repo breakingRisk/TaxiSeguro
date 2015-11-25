@@ -3,4 +3,7 @@
 
     <string name="dirOr">Origen</string>
     <string name="dirDes">Mi destino</string>
+    <string name="title_activity_prueba">prueba</string>
+
+    <string name="perfil">Perfil</string>
 </resources>
