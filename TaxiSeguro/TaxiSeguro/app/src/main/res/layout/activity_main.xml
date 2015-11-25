@@ -6,7 +6,7 @@
     android:clickable="true"
     android:nestedScrollingEnabled="true"
     android:visibility="visible"
-    android:background="#a7ffeb"
+    android:background="#e0f2ff"
     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -15,34 +15,35 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Registrarme"
-        android:id="@+id/button3"
+        android:text="Iniciar Sesión"
+        android:id="@+id/inicio"
         android:layout_gravity="center_vertical"
-        android:background="@drawable/button_border1"
+        android:background="@color/b1"
         android:padding="18dp"
         android:textColor="#fff"
         android:textSize="22sp"
         android:layout_above="@+id/button4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp" />
+        android:layout_marginRight="5dp"
+        android:textStyle="bold"/>
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar Sesión"
+        android:text="Registrarme"
         android:id="@+id/button4"
         android:layout_gravity="bottom"
         android:padding="18dp"
         android:textColor="#fff"
         android:textSize="22sp"
-        android:background="@drawable/button_border"
+        android:background="@color/b2"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:textStyle="bold" />
@@ -52,12 +53,24 @@
         android:layout_height="wrap_content"
         android:id="@+id/logota"
         android:background="@drawable/logota"
-        android:layout_above="@+id/button3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="94dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp" />
+        android:layout_marginBottom="93dp"
+        android:layout_above="@+id/textView"
+        android:layout_alignRight="@+id/inicio"
+        android:layout_alignEnd="@+id/inicio"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="La forma más segura de viajar"
+        android:id="@+id/textView"
+        android:layout_above="@+id/inicio"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="39dp"
+        android:textColor="#6f6f6f"
+        android:textSize="17sp" />
 
 
 </RelativeLayout>
