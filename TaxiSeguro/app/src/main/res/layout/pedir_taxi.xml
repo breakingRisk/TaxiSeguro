@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,32 +9,146 @@
     android:paddingBottom="0dp"
     android:background="@drawable/map_bg"
     tools:context="com.example.magdiel.taxiseguro.pedirTaxi"
-    android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+    android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+    android:orientation="vertical">
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:scrollbars="none">
 
-    <ImageButton
-        android:id="@+id/locate"
-        android:layout_width="@dimen/fab_button_diameter"
-        android:layout_height="@dimen/fab_button_diameter"
-        android:background="@drawable/fab_shape"
-        android:src="@drawable/map_icon"
-        android:tint="@android:color/white"
-        android:layout_marginTop="84dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/taxi"
-        android:layout_alignStart="@+id/taxi" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/taxi"
-        android:layout_width="@dimen/fab_button_diameter"
-        android:layout_height="@dimen/fab_button_diameter"
-        android:background="@drawable/fab_shape"
-        android:src="@drawable/taxi_icon"
-        android:tint="@android:color/white"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="220dp"
-        android:layout_marginLeft="25dp"/>
+            <ImageButton
+                android:id="@+id/locatePop"
+                android:layout_width="@dimen/fab_button_diameter"
+                android:layout_height="@dimen/fab_button_diameter"
+                android:background="@drawable/fab_shape"
+                android:src="@drawable/map_icon"
+                android:tint="@android:color/white"
+                android:layout_marginTop="84dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/taxi"
+                android:layout_alignStart="@+id/taxi" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/dirOr"
+                android:textColor="@color/negro"
+                android:textSize="22sp"
+                android:gravity="center"/>
 
-</RelativeLayout>
+            <LinearLayout
+                android:id="@+id/locating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <EditText android:id="@+id/txtCalle"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:hint="Calle"
+                    android:inputType="text" />
+
+                <EditText android:id="@+id/txtCol"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:hint="Colonia"
+                    android:inputType="text" />
+
+                <EditText android:id="@+id/txtCp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:hint="Cp"
+                    android:inputType="text" />
+
+                <TextView android:id="@+id/ubicarme"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dip"
+                    android:layout_marginBottom="40dip"
+                    android:text="Ubicarme!"
+                    android:gravity="center"
+                    android:textSize="20dip"
+                    android:textColor="#0b84aa"/>
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Listo"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/DestinoPop"
+                android:layout_width="@dimen/fab_button_diameter"
+                android:layout_height="@dimen/fab_button_diameter"
+                android:background="@drawable/fab_shape"
+                android:src="@drawable/map_icon"
+                android:tint="@android:color/white"
+                android:layout_marginTop="84dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/taxi"
+                android:layout_alignStart="@+id/taxi" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/dirDes"
+                android:textColor="@color/negro"
+                android:textSize="22sp"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/destino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <EditText android:id="@+id/txtCalleD"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:hint="Calle"
+                    android:inputType="text" />
+
+                <EditText android:id="@+id/txtColD"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:hint="Colonia"
+                    android:inputType="text" />
+
+                <EditText android:id="@+id/txtCpD"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:hint="Cp"
+                    android:inputType="text" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="Listo"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="Pedir mi taxi"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

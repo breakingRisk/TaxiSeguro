@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 }
 
     public void onClick(View view) {
-        //Intent abrir = new Intent(this, pedirTaxi.class);
-        //startActivity(abrir);
-        Intent to_login = new Intent(this, Login.class);
-        startActivity(to_login);
+        Intent abrir = new Intent(this, pedirTaxi.class);
+        startActivity(abrir);
+        //Intent to_login = new Intent(this, Login.class);
+        //startActivity(to_login);
     }
 }

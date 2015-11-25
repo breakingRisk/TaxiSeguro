@@ -4,11 +4,32 @@
         android:id="@+id/action_one"
         android:title="Accion1"/>
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText00"
+        android:layout_below="@+id/locate"
+        android:layout_centerHorizontal="true" />
+
     <item
         android:id="@+id/action_two"
         android:title="Accion2"/>
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText01"
+        android:layout_below="@+id/locate"
+        android:layout_centerHorizontal="true" />
+
     <item
         android:id="@+id/action_three"
         android:title="Accion3"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText02"
+        android:layout_below="@+id/locate"
+        android:layout_centerHorizontal="true" />
 </menu>

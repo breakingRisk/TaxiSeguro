@@ -21,12 +21,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
-    String IP = "169.254.234.218";
-    private final String SERVER = "http://" + IP + "/taxiSeguro/controlador/controllerDB.php";
-    String nombre;
-    String contrasena;
-    EditText user;
-    EditText pass;
+    String IP = "169.254.224.97";
+    private final String SERVER = "http://" + IP + "/taxiSeguro/index.php";
+    private EditText user;
+    private EditText pass;
     private ProgressDialog pDialog;
 
     // Clase JSONParser
@@ -53,7 +51,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.login:
+            case R.id.button_login:
                 new AttemptLogin().execute();
                 break;
 
