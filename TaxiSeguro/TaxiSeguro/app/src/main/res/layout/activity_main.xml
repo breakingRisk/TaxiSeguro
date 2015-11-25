@@ -6,57 +6,58 @@
     android:clickable="true"
     android:nestedScrollingEnabled="true"
     android:visibility="visible"
-    android:background="#e40808"
+    android:background="#a7ffeb"
     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ImageView
+
+
+    <Button
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/imageView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/logo"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"/>
-
-    <Button android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="soy nuevo"
-        android:id="@+id/button"
-        android:visibility="visible"
-        android:height="80dp"
-        android:layout_alignBottom="@+id/button2"
+        android:text="Registrarme"
+        android:id="@+id/button3"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/button_border1"
+        android:padding="18dp"
+        android:textColor="#fff"
+        android:textSize="22sp"
+        android:layout_above="@+id/button4"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="false"
-        android:width="190dp"
-        android:textColor="#ffffff"
-        android:background="#01BFBA"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
 
-    <Button android:layout_width="wrap_content"
+    <Button
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar sesión"
-        android:id="@+id/button2"
-        android:width="190dp"
-        android:clickable="false"
-        android:layout_toRightOf="@+id/button"
+        android:text="Iniciar Sesión"
+        android:id="@+id/button4"
+        android:layout_gravity="bottom"
+        android:padding="18dp"
+        android:textColor="#fff"
+        android:textSize="22sp"
+        android:background="@drawable/button_border"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="false"
-        android:height="80dp"
-        android:textColor="#ffffff"
-        android:background="#103240"/><TextView
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textStyle="bold" />
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="El modo seguro de viajar"
-        android:id="@+id/textView2"
-        android:layout_marginBottom="49dp"
-        android:layout_above="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-    android:layout_gravity="center" />
+        android:id="@+id/logota"
+        android:background="@drawable/logota"
+        android:layout_above="@+id/button3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="94dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
 
 
 </RelativeLayout>
