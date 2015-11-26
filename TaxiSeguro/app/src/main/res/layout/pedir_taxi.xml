@@ -120,7 +120,7 @@
                     android:layout_marginRight="10dp"
                     android:background="@drawable/borde1"
                     android:textColor="@color/negro"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:textSize="22sp"/>
 
             </LinearLayout>
@@ -193,7 +193,7 @@
                     android:layout_marginRight="10dp"
                     android:background="@drawable/borde1"
                     android:textColor="@color/negro"
-                    android:padding="15dp"
+                    android:padding="12dp"
                     android:textSize="22sp"
 
                     />
