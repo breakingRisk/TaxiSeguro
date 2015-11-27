@@ -18,7 +18,6 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
     private ImageButton pop1;
     private TextView registro;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
