@@ -71,6 +71,4 @@
         android:layout_marginBottom="39dp"
         android:textColor="#6f6f6f"
         android:textSize="17sp" />
-
-
 </RelativeLayout>
