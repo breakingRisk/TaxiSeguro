@@ -8,8 +8,6 @@
     <string name="title_activity_prueba">prueba</string>
     <string name="perfil">Perfil</string>
     <string name="title_activity_modifica">Modifica</string>
-    <string name="nombre">Nombre</string>
-    <string name="telefono">Teléfono</string>
     <string name="correo">Correo</string>
     <string name="contrasenia_actual">Contraseña Actual</string>
     <string name="contrasenia_nueva">Contraseña Nueva</string>

@@ -35,6 +35,7 @@
             android:name=".prueba"
             android:label="@string/title_activity_prueba"
             android:theme="@style/AppTheme.NoActionBar" >
+            </activity>
         <activity android:name=".Perfil" >
         </activity>
         <activity android:name=".Password" >
