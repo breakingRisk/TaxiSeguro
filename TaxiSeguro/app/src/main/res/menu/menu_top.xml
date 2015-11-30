@@ -3,9 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.herprogramacion.toolbarapp.DetailActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/to_perfil"
         android:orderInCategory="100"
         android:title="@string/perfil"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/c_session"
+        android:orderInCategory="100"
+        android:title="@string/cerrar"
         app:showAsAction="never" />
 
 </menu>

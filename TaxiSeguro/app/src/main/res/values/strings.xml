@@ -12,4 +12,5 @@
     <string name="contrasenia_actual">Contraseña Actual</string>
     <string name="contrasenia_nueva">Contraseña Nueva</string>
     <string name="contrasenia_nueva_de_nuevo">Confirma</string>
+    <string name="cerrar">Cerrar sesión</string>
 </resources>

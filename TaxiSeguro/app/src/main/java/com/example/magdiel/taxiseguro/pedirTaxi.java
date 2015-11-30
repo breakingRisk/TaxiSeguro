@@ -23,7 +23,7 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pedir_taxi);
 
-        setToolbar();// Añadir la Toolbar
+        setToolbar();// Añadimos la Toolbar
 
         pop = (ImageButton)findViewById(R.id.locatePop);
         pop1 = (ImageButton)findViewById(R.id.DestinoPop);
@@ -33,6 +33,9 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
         registro.setOnClickListener(this);
     }
 
+    /*
+    * Método para crear la barra superior
+    */
     private void setToolbar() {
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -47,11 +50,18 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        Intent optionToolbar;
 
         switch (id) {
-            case R.id.action_settings:
-                Intent i = new Intent(this, Home.class);
-                startActivity(i);
+            case R.id.to_perfil:  //Nos vamos al perfil
+                optionToolbar = new Intent(this, Perfil.class);
+                startActivity(optionToolbar);
+                return true;
+
+            case R.id.c_session:  //Cerramos sesión
+                Toast.makeText(this, "Cerrando tu sesión...", Toast.LENGTH_SHORT).show();
+                optionToolbar = new Intent(this, MainActivity.class);
+                startActivity(optionToolbar);
                 return true;
 
             default:
