@@ -8,16 +8,17 @@ import android.widget.Button;
 
 public class Modifica extends Activity implements View.OnClickListener{
 
+    Button b_confirmar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modifica);
 
-        Button b_modifica_contraseñia = (Button) findViewById(R.id.cambia_contrasenia);
-        b_modifica_contraseñia.setOnClickListener(this);
+        b_confirmar = (Button) findViewById(R.id.confirmar);
+        b_confirmar.setOnClickListener(this);
     }
     public void onClick(View view) {
-        Intent abrir2 = new Intent(this, Password.class);
+        Intent abrir2 = new Intent(this, Perfil.class);
         startActivity(abrir2);
     }
 }

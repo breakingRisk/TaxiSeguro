@@ -66,27 +66,19 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Confirmar"
-                android:id="@+id/confirma_modifica"
-                android:background="#1de9b6"
-                android:layout_marginBottom="47dp"
-                android:textSize="18dp"
-                android:padding="15sp"
-                android:layout_margin="35sp"
-                android:layout_gravity="center_horizontal"
-                android:textColor="#ffffff" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contraseña"
-                android:id="@+id/cambia_contrasenia"
-                android:padding="15sp"
-                android:background="#1de9b6"
-
-                android:textSize="18dp"
-                android:textColor="#ffffff" />
+                android:id="@+id/confirmar"
+                android:layout_gravity="center_vertical"
+                android:background="@color/b1"
+                android:padding="18dp"
+                android:textColor="#fff"
+                android:textSize="22sp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
     </LinearLayout>
