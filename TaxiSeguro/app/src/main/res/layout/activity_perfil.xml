@@ -81,7 +81,7 @@
                 android:text="Modificar Contraseña"
                 android:id="@+id/modificarC"
                 android:layout_gravity="center_vertical"
-                android:background="@color/b1"
+                android:background="@color/b2"
                 android:padding="18dp"
                 android:textColor="#fff"
                 android:textSize="22sp"
