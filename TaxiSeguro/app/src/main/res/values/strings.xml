@@ -13,4 +13,17 @@
     <string name="contrasenia_nueva">Contraseña Nueva</string>
     <string name="contrasenia_nueva_de_nuevo">Confirma</string>
     <string name="cerrar">Cerrar sesión</string>
+
+    <string name="calleOb">Calle Obligatoria</string>
+    <string name="colOb">Colonia Obligatoria</string>
+    <string name="cpOb">Código postal Obligatorio</string>
+
+    <string name="calleTamVal">Número de caracteres inválido</string>
+    <string name="colTamVal">Número de caracteres inválido</string>
+    <string name="cpTamVal">Número de caracteres inválido</string>
+    <string name="validadoOrigen">Tu origen ha sido validado</string>
+    <string name="validadoDestino">Tu destino ha sido validado</string>
+
+
+
 </resources>
