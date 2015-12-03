@@ -24,8 +24,7 @@ public class Modifica extends Activity implements View.OnClickListener{
     private String nombreS;
     private String correoC;
     private String telefonoS;
-    private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";   //Expresión regular para validar correo
+    private static final String PATTERN_EMAIL = "^([\\da-z_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$";   //Expresión regular para validar correo
     private static final String PATTERN_NOMBRE = "[A-Za-záéíóúñü]{2,}([\\s][A-Za-záéíóúñü]{2,})*$";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
