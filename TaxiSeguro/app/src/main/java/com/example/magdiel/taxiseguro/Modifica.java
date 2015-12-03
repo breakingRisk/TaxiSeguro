@@ -77,8 +77,10 @@ public class Modifica extends Activity implements View.OnClickListener{
         String nombreS = nombre.getText().toString().trim();
         String correoC = correo.getText().toString().trim();
         String telefonoS = telefono.getText().toString().trim();
-        return (!isEmptyFields(nombreS, correoC, telefonoS) && hasSizeValid (nombreS, correoC, telefonoS)
-                && validateEmail(correoC) && validaNombre(nombreS));
+        return (!isEmptyFields(nombreS, correoC, telefonoS)
+                && hasSizeValid (nombreS, correoC, telefonoS)
+                && validateEmail(correoC)
+                && validaNombre(nombreS));
     }
     /**
      * Método que verifica que los campos no sean vacios

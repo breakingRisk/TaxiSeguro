@@ -77,7 +77,9 @@ public class Password extends AppCompatActivity implements View.OnClickListener 
         String passwordV = contraseniaVieja.getText().toString().trim();
         String passwordN = contraseniaNueva.getText().toString().trim();
         String passwordR = contraseniaRe.getText().toString().trim();
-        return (validaContraseniaV(passwordV)&& validaContraseniaN(passwordN) && validaContraseñaR(passwordR,passwordN));
+        return (validaContraseniaV(passwordV)
+                && validaContraseniaN(passwordN)
+                && validaContraseniaR(passwordR,passwordN));
     }
     /**
      * Método que valida que el nombre tenga el formato deseado usando una expresion regular
@@ -104,7 +106,7 @@ public class Password extends AppCompatActivity implements View.OnClickListener 
         }
         return true;
     }
-    private boolean validaContraseñaR(String pass, String pass1){
+    private boolean validaContraseniaR(String pass, String pass1){
         Pattern pattern = Pattern.compile(PATTERN_PASSWORD);
         Matcher matcher = pattern.matcher(pass);
         boolean bandera = matcher.matches();
