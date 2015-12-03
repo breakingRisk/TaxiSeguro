@@ -67,8 +67,11 @@ public class Password extends AppCompatActivity implements View.OnClickListener 
         }
     }
     public void onClick(View view) {
-        Intent abrir2 = new Intent(this, Perfil.class);
-        startActivity(abrir2);
+        Intent abrir2;
+        if(validateFields()){
+            abrir2 = new Intent(this, Perfil.class);
+            startActivity(abrir2);
+        }
     }
     /**
      * Método que pasa los campos nombre, correo y telefono a String
