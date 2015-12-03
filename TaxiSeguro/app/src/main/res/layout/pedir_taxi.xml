@@ -84,23 +84,26 @@
                 android:layout_margin="15dp"
                 android:padding="15dp">
 
-                <EditText android:id="@+id/txtCalle"
+                <EditText android:id="@+id/txtCalleO"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
                     android:hint="Calle"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textColor="@color/negro"/>
 
-                <EditText android:id="@+id/txtCol"
+                <EditText android:id="@+id/txtColO"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
                     android:hint="Colonia"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textColor="@color/negro"/>
 
-                <EditText android:id="@+id/txtCp"
+                <EditText android:id="@+id/txtCpO"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
                     android:hint="Cp"
-                    android:inputType="text" />
+                    android:inputType="number"
+                    android:textColor="@color/negro"/>
 
                 <TextView android:id="@+id/ubicarme"
                     android:layout_width="fill_parent"
@@ -113,6 +116,7 @@
                     android:textColor="#0b84aa"/>
 
                 <Button
+                    android:id="@+id/botonOrigen"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:text="Listo"
@@ -171,21 +175,25 @@
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
                     android:hint="Calle"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textColor="@color/negro"/>
 
                 <EditText android:id="@+id/txtColD"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
                     android:hint="Colonia"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textColor="@color/negro"/>
 
                 <EditText android:id="@+id/txtCpD"
                     android:layout_height="wrap_content"
                     android:layout_width="fill_parent"
                     android:hint="Cp"
-                    android:inputType="text" />
+                    android:inputType="number"
+                    android:textColor="@color/negro"/>
 
                 <Button
+                    android:id="@+id/botonDestino"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:text="Listo"
@@ -195,7 +203,6 @@
                     android:textColor="@color/negro"
                     android:padding="12dp"
                     android:textSize="22sp"
-
                     />
 
             </LinearLayout>
