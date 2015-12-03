@@ -1,6 +1,5 @@
 package com.example.magdiel.taxiseguro;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.Vibrator;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -19,6 +19,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,11 +29,8 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import cz.msebera.android.httpclient.NameValuePair;
-import cz.msebera.android.httpclient.message.BasicNameValuePair;
 
-
-public class Login extends Activity implements View.OnClickListener {
+public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private Button inicio;
     private EditText user;
@@ -43,10 +42,9 @@ public class Login extends Activity implements View.OnClickListener {
     private ProgressDialog pDialog;
     private Httppostaux post;
 
-    private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";   //Expresión regular para validar correo
-    private static final String IP = "169.254.92.118";
-    private static final String IP_SERVER = "http://" + IP + "/taxiSeguro/page.php";
+    private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";   //Expresión regular para validar correo
+    private static final String IP = "169.254.23.72";
+    private static final String IP_SERVER = "http://" + IP + "/taxiSeguro/acces.php";
 
 
     /*  Clase interna AsyncTask
@@ -78,7 +76,7 @@ public class Login extends Activity implements View.OnClickListener {
             ArrayList<NameValuePair> postparameters2send = new ArrayList<NameValuePair>();
 
             postparameters2send.add(new BasicNameValuePair("usuario",username));
-            postparameters2send.add(new BasicNameValuePair("password", password));
+            postparameters2send.add(new BasicNameValuePair("password",password));
 
             //realizamos una petición y como respuesta obtenemos un arreglo JSON
             JSONArray jdata = post.getserverdata(postparameters2send,IP_SERVER);
@@ -143,6 +141,8 @@ public class Login extends Activity implements View.OnClickListener {
         }
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -199,7 +199,7 @@ public class Login extends Activity implements View.OnClickListener {
         usera = user.getText().toString().trim();
         passa = pass.getText().toString().trim();
 
-        return (!isEmptyFields(usera, passa) && hasSizeValid(usera, passa)/* && validateEmail(usera)*/);
+        return (!isEmptyFields(usera, passa) && hasSizeValid(usera, passa) && validateEmail(usera));
     }
 
     /*
@@ -263,6 +263,7 @@ public class Login extends Activity implements View.OnClickListener {
         return true;
     }
 
+    //Vibra y muestra un mensaje de que son datos inválidos
     private void err_login(){
         Vibrator vibr = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         vibr.vibrate(200);
@@ -282,11 +283,11 @@ public class Login extends Activity implements View.OnClickListener {
             case R.id.button5:
                 if (validateFields()) {
                     //Si pasa las validaciones de sintaxis ejecutamos las validaciones de usuario en la BDatos
-                    //new asynclogin().execute(usera, passa);
+                    new asynclogin().execute(usera, passa);
 
-                    Toast.makeText(this, "Iniciando sesión...", Toast.LENGTH_LONG).show();
+                    /*Toast.makeText(this, "Iniciando sesión...", Toast.LENGTH_LONG).show();
                     pedirTaxi = new Intent(this, pedirTaxi.class);
-                    startActivity(pedirTaxi);
+                    startActivity(pedirTaxi);*/
                 }
                 break;
         }

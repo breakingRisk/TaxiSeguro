@@ -43,10 +43,22 @@
             <TableLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:paddingBottom="0dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp">
 
                 <TableRow
-                    android:layout_marginTop="30dp">
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:id="@+id/origenTable">
                     <ImageButton
                         android:id="@+id/locatePop"
                         android:layout_width="@dimen/fab_button_diameter"
@@ -54,13 +66,12 @@
                         android:background="@drawable/fab_shape"
                         android:src="@drawable/map_icon"
                         android:tint="@android:color/white"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginLeft="10dp"
                         android:layout_alignParentTop="true"
                         android:layout_alignLeft="@+id/taxi"
                         android:layout_alignStart="@+id/taxi" />
 
                     <TextView
+                        android:id="@+id/origentexto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/dirOr"
@@ -120,7 +131,7 @@
                     android:text="Listo"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/borde1"
+                    android:background="#e3e3e3"
                     android:textColor="@color/negro"
                     android:padding="12dp"
                     android:textSize="22sp"/>
@@ -130,10 +141,22 @@
             <TableLayout
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:paddingBottom="0dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp">
 
                 <TableRow
-                    android:layout_marginTop="30dp">
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:id="@+id/destinoTable">
                     <ImageButton
                         android:id="@+id/DestinoPop"
                         android:layout_width="@dimen/fab_button_diameter"
@@ -141,13 +164,12 @@
                         android:background="@drawable/fab_shape"
                         android:src="@drawable/map_icon"
                         android:tint="@android:color/white"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginLeft="10dp"
                         android:layout_alignParentTop="true"
                         android:layout_alignLeft="@+id/taxi"
                         android:layout_alignStart="@+id/taxi" />
 
                     <TextView
+                        android:id="@+id/destinotexto"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/dirDes"
@@ -197,7 +219,7 @@
                     android:text="Listo"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/borde1"
+                    android:background="#e3e3e3"
                     android:textColor="@color/negro"
                     android:padding="12dp"
                     android:textSize="22sp"
