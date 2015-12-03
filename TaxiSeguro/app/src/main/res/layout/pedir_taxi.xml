@@ -30,9 +30,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-
-    
-    <ScrollView
+     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1">
@@ -219,7 +217,7 @@
             android:text="Pedir mi taxi"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
-            android:background="#00bfa5"
+            android:background="@color/b2"
             android:layout_gravity="bottom"
             android:padding="15dp"
             android:textSize="24sp"

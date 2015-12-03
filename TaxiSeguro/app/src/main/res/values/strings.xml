@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TaxiSeguro</string>
     <string name="nombre">Nombre</string>
-    <string name="telefono">Telefono</string>
+    <string name="telefono">Teléfono</string>
     <string name="email">E-mail</string>
     <string name="dirOr">Origen</string>
     <string name="dirDes">Mi destino</string>
@@ -11,7 +11,7 @@
     <string name="correo">Correo</string>
     <string name="contrasenia_actual">Contraseña Actual</string>
     <string name="contrasenia_nueva">Contraseña Nueva</string>
-    <string name="contrasenia_nueva_de_nuevo">Confirma</string>
+    <string name="contrasenia_nueva_de_nuevo">Confirmar</string>
     <string name="cerrar">Cerrar sesión</string>
 
     <string name="calleOb">Calle Obligatoria</string>

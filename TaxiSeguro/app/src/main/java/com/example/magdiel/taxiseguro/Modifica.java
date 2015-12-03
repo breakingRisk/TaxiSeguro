@@ -21,8 +21,10 @@ public class Modifica extends Activity implements View.OnClickListener{
     private EditText nombre;
     private EditText correo;
     private EditText telefono;
-    private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";   //Expresión regular para validar correo
+    private String nombreS;
+    private String correoC;
+    private String telefonoS;
+    private static final String PATTERN_EMAIL = "^([\\da-z_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$";   //Expresión regular para validar correo
     private static final String PATTERN_NOMBRE = "[A-Za-záéíóúñü]{2,}([\\s][A-Za-záéíóúñü]{2,})*$";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class Modifica extends Activity implements View.OnClickListener{
         correo = (EditText)findViewById(R.id.campoCorreo);
         correo.addTextChangedListener(textWatcher);
         telefono = (EditText) findViewById(R.id.campoTelefono);
+        telefono.addTextChangedListener(textWatcher);
 
         b_confirmar = (Button) findViewById(R.id.confirmar);
         b_confirmar.setOnClickListener(this);
@@ -67,16 +70,19 @@ public class Modifica extends Activity implements View.OnClickListener{
         }
     }
     public void onClick(View view) {
-        Intent abrir2 = new Intent(this, Perfil.class);
-        startActivity(abrir2);
+        Intent abrir2;
+        if(validateFields()) {
+            abrir2 = new Intent(this, Perfil.class);
+            startActivity(abrir2);
+        }
     }
     /**
      * Método que pasa los campos nombre, correo y telefono a String
      */
     private boolean validateFields(){
-        String nombreS = nombre.getText().toString().trim();
-        String correoC = correo.getText().toString().trim();
-        String telefonoS = telefono.getText().toString().trim();
+        nombreS = nombre.getText().toString().trim();
+        correoC = correo.getText().toString().trim();
+        telefonoS = telefono.getText().toString().trim();
         return (!isEmptyFields(nombreS, correoC, telefonoS)
                 && hasSizeValid (nombreS, correoC, telefonoS)
                 && validateEmail(correoC)

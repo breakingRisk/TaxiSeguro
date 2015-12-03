@@ -5,84 +5,89 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e0f2f1">
+    android:background="#e0f2f1"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp">>
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView4"
-            android:src="@drawable/account"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="1dp"
-            android:layout_gravity="center"/>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/campoNombre"
-            android:textSize="18dp"
-            android:padding="15sp"
-            android:layout_margin="25sp"
-            android:hint="@string/nombre" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:ems="10"
-            android:id="@+id/campoCorreo"
-            android:textSize="18dp"
-            android:padding="15sp"
-            android:layout_margin="25sp"
-            android:hint="@string/correo"/>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/campoTelefono"
-            android:background="?android:attr/selectableItemBackground"
-            android:textSize="18dp"
-            android:padding="15sp"
-            android:layout_margin="25sp"
-            android:hint="@string/telefono"/>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
 
-            <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Confirmar"
-                android:id="@+id/confirmar"
-                android:layout_gravity="center_vertical"
-                android:background="@color/b1"
-                android:padding="18dp"
-                android:textColor="#fff"
-                android:textSize="22sp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:textStyle="bold"/>
+                android:id="@+id/imageView4"
+                android:src="@drawable/account"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/campoNombre"
+                android:textSize="18dp"
+                android:padding="15sp"
+                android:layout_margin="25sp"
+                android:hint="@string/nombre" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/campoCorreo"
+                android:textSize="18dp"
+                android:padding="15sp"
+                android:layout_margin="25sp"
+                android:hint="@string/correo"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/campoTelefono"
+                android:background="?android:attr/selectableItemBackground"
+                android:textSize="18dp"
+                android:padding="15sp"
+                android:layout_margin="25sp"
+                android:hint="@string/telefono"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
         </LinearLayout>
-
-    </LinearLayout>
     </ScrollView>
-
-
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/contrasenia_nueva_de_nuevo"
+            android:id="@+id/confirmar"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_gravity="bottom"
+            android:background="@color/b1"
+            android:padding="15dp"
+            android:textColor="#fff"
+            android:textSize="24sp"/>
+    </LinearLayout>
 </LinearLayout>
