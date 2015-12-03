@@ -16,7 +16,7 @@
         android:gravity="center"
         android:orientation="vertical"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="120dp"
         >
 
 
@@ -25,12 +25,11 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:id="@+id/pass"
             android:hint="Password"
-            android:layout_above="@+id/editText3"
+            android:layout_above="@+id/pass2"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="18dp"
-            android:background="@drawable/casilla"
             android:padding="10dp"
             />
 
@@ -39,13 +38,12 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText3"
+            android:id="@+id/pass2"
             android:hint="Confirmar password"
             android:autoText="false"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="70dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/casilla"
             android:padding="10dp"
             />
 
@@ -54,16 +52,16 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Abrir cuenta"
-            android:id="@+id/button5"
+            android:id="@+id/acuenta"
             android:background="#00bfa5"
-            android:padding = "15dp"
+            android:padding = "10dp"
             android:textColor="#fff"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="10dp"
             android:textSize="22sp"
-            android:textStyle="bold"/>
+          />
 
 
         <TextView android:id="@+id/linklog"
@@ -71,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
             android:layout_marginBottom="40dip"
-            android:text="Ya tienes cuenta, ¡accede!"
+            android:text=" Ya tienes cuenta, ¡accede!"
             android:gravity="center"
             android:textSize="20dip"
             android:textColor="#00bfa5"/>
