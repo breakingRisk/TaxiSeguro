@@ -23,6 +23,8 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
     private ImageButton b2;
     private ImageButton pop;
     private ImageButton pop1;
+    private Button origenboton;
+    private Button destinoboton;
     private TextView registro;
     private EditText calleOr;
     private EditText colOr;
@@ -31,6 +33,8 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
     private EditText colDes;
     private EditText cpDes;
     private Resources resources;
+    private TextView origenTable;
+    private TextView destinoTable;
 
 
     @Override
@@ -44,8 +48,14 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
         pop = (ImageButton)findViewById(R.id.locatePop);
         pop1 = (ImageButton)findViewById(R.id.DestinoPop);
         registro = (TextView)findViewById(R.id.ubicarme);
+        origenTable = (TextView)findViewById(R.id.origentexto);
+        destinoTable = (TextView)findViewById(R.id.destinotexto);
+        origenboton = (Button)findViewById(R.id.botonOrigen);
+        destinoboton = (Button)findViewById(R.id.botonDestino);
         pop.setOnClickListener(this);
         pop1.setOnClickListener(this);
+        origenTable.setOnClickListener(this);
+        destinoTable.setOnClickListener(this);
         registro.setOnClickListener(this);
         Button verifOrigen = (Button)findViewById(R.id.botonOrigen);
         verifOrigen.setOnClickListener(this);
@@ -78,8 +88,7 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
 
             case R.id.c_session:  //Cerramos sesión
                 Toast.makeText(this, "Cerrando tu sesión...", Toast.LENGTH_SHORT).show();
-                optionToolbar = new Intent(this, MainActivity.class);
-                startActivity(optionToolbar);
+                finish();
                 return true;
 
             default:
@@ -255,18 +264,38 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
                 }
                 break;
             case R.id.botonOrigen:
-                if (validateFieldsOr()) {
-                    Toast.makeText(this, resources.getString(R.string.validadoOrigen), Toast.LENGTH_LONG).show();
+                if(mostrarOr.getVisibility()== View.VISIBLE ){
+                    mostrarOr.setVisibility(View.GONE);
+                } else {
+                    mostrarOr.setVisibility(View.VISIBLE);
                 }
                 break;
             case R.id.botonDestino:
-                if (validateFieldsDes()) {
-                    Toast.makeText(this, resources.getString(R.string.validadoDestino), Toast.LENGTH_LONG).show();
+                if(mostrarDes.getVisibility()== View.VISIBLE ){
+                    mostrarDes.setVisibility(View.GONE);
+                } else {
+                    mostrarDes.setVisibility(View.VISIBLE);
                 }
                 break;
             case R.id.ubicarme:
                 Toast.makeText(this, "Por el momento no está implementado, espere una actualización", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.origentexto:
+                if(mostrarOr.getVisibility()== View.VISIBLE ){
+                    mostrarOr.setVisibility(View.GONE);
+                } else {
+                    mostrarOr.setVisibility(View.VISIBLE);
+                }
+                break;
+            case R.id.destinotexto:
+                if(mostrarDes.getVisibility()== View.VISIBLE ){
+                    mostrarDes.setVisibility(View.GONE);
+                } else {
+                    mostrarDes.setVisibility(View.VISIBLE);
+                }
+                break;
+
+
 
         }
     }

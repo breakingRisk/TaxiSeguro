@@ -1,6 +1,5 @@
 package com.example.magdiel.taxiseguro;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.Vibrator;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -30,7 +30,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class Login extends Activity implements View.OnClickListener {
+public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private Button inicio;
     private EditText user;
@@ -42,9 +42,8 @@ public class Login extends Activity implements View.OnClickListener {
     private ProgressDialog pDialog;
     private Httppostaux post;
 
-    private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";   //Expresión regular para validar correo
-    private static final String IP = "192.168.1.71";
+    private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";   //Expresión regular para validar correo
+    private static final String IP = "169.254.23.72";
     private static final String IP_SERVER = "http://" + IP + "/taxiSeguro/acces.php";
 
 
@@ -142,6 +141,8 @@ public class Login extends Activity implements View.OnClickListener {
         }
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -198,7 +199,7 @@ public class Login extends Activity implements View.OnClickListener {
         usera = user.getText().toString().trim();
         passa = pass.getText().toString().trim();
 
-        return (!isEmptyFields(usera, passa) && hasSizeValid(usera, passa)/* && validateEmail(usera)*/);
+        return (!isEmptyFields(usera, passa) && hasSizeValid(usera, passa) && validateEmail(usera));
     }
 
     /*
@@ -262,6 +263,7 @@ public class Login extends Activity implements View.OnClickListener {
         return true;
     }
 
+    //Vibra y muestra un mensaje de que son datos inválidos
     private void err_login(){
         Vibrator vibr = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         vibr.vibrate(200);
