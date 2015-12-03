@@ -1,103 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="wrap_content"
     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
     tools:context="com.example.magdiel.taxiseguro.Registro"
     android:background="#e0f2ff"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_marginTop="70dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
         >
 
-
-
-
-        <EditText
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="Nombre"
-            android:id="@+id/user"
-            android:layout_above="@+id/phone"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="18dp"
-            android:padding="10dp" />
-
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/phone"
-            android:hint="@string/telefono"
-            android:layout_above="@+id/email"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="18dp"
-            android:padding="10dp"
-
-            />
-
-        <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:ems="10"
-            android:id="@+id/email"
-            android:hint="@string/email"
-            android:autoText="false"
-            android:layout_marginBottom="70dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:padding="10dp"
-
-            />
-
-
-
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Siguiente"
-            android:id="@+id/registro"
-            android:background="#00bfa5"
-            android:padding = "10dp"
-            android:textColor="#fff"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="10dp"
-            android:textSize="22sp"
-           />
-
-        <TextView android:id="@+id/linklog"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:layout_marginBottom="40dip"
-            android:text=" Ya tienes cuenta, ¡accede!"
             android:gravity="center"
-            android:textSize="20dip"
-            android:textColor="#00bfa5"/>
+            android:orientation="vertical"
+            android:layout_marginTop="70dp"
+            android:padding="15dp"
+            >
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Nombre"
+                android:id="@+id/user"
+                android:layout_above="@+id/phone"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="18dp"
+                android:padding="10dp"
+                />
+               
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/phone"
+                android:hint="@string/telefono"
+                android:layout_above="@+id/email"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="18dp"
+                android:padding="10dp"
+
+                />
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/email"
+                android:hint="@string/email"
+                android:autoText="false"
+                android:layout_marginBottom="70dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+
+                />
 
 
 
-    </LinearLayout>
 
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Siguiente"
+                android:id="@+id/registro"
+                android:background="#00bfa5"
+                android:padding = "10dp"
+                android:textColor="#fff"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="10dp"
+                android:textSize="22sp"
+                />
 
+            <TextView android:id="@+id/linklog"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:layout_marginBottom="40dip"
+                android:text=" Ya tienes cuenta, ¡accede!"
+                android:gravity="center"
+                android:textSize="20dip"
+                android:textColor="#00bfa5"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"/>
 
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
