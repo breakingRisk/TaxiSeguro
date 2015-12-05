@@ -84,15 +84,7 @@
           />
 
 
-        <TextView android:id="@+id/linklog"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
-            android:layout_marginBottom="40dip"
-            android:text=" Ya tienes cuenta, ¡accede!"
-            android:gravity="center"
-            android:textSize="20dip"
-            android:textColor="#00bfa5"/>
+
 
     </LinearLayout>
 
