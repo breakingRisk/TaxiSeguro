@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Registro2 extends Activity implements View.OnClickListener {
+public class Registro2 extends  AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

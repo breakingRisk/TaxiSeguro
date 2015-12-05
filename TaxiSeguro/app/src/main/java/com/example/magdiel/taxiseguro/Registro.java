@@ -16,7 +16,10 @@ import android.widget.TextView;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Registro extends Activity implements View.OnClickListener {
+public class Registro extends AppCompatActivity implements View.OnClickListener {
+
+    private String ip = "192.168.13.159";
+    private String url = "http://"  +  ip + "/Taxiseguro/acces.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

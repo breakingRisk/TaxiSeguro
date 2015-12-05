@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
     tools:context="com.example.magdiel.taxiseguro.Registro"
-    android:background="#e0f2ff"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bgt102">
 
-    <ScrollView
+
+
+
+<ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="579dp"
         android:scrollbars="none"
         >
 
@@ -22,9 +23,18 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="50dp"
             android:padding="15dp"
             >
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center">
+
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -33,10 +43,18 @@
                 android:id="@+id/user"
                 android:layout_above="@+id/phone"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="18dp"
-                android:padding="10dp"
+                android:textColor="@color/negro"
                 />
-               
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_vertical">
+
 
             <EditText
                 android:layout_width="fill_parent"
@@ -47,10 +65,18 @@
                 android:hint="@string/telefono"
                 android:layout_above="@+id/email"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="18dp"
-                android:padding="10dp"
-
+                android:textColor="@color/negro"
                 />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_vertical">
+
 
             <EditText
                 android:layout_width="fill_parent"
@@ -60,14 +86,14 @@
                 android:id="@+id/email"
                 android:hint="@string/email"
                 android:autoText="false"
-                android:layout_marginBottom="70dp"
+                android:layout_marginBottom="60dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:padding="10dp"
+                android:textColor="@color/negro"
 
                 />
 
-
+            </android.support.design.widget.TextInputLayout>
 
 
             <Button
