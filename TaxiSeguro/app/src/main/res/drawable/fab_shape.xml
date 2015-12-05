@@ -227,7 +227,7 @@
             <!-- Blue button -->
             <item>
                 <shape android:shape="oval">
-                    <solid android:color="#00bfa5"/>
+                    <solid android:color="#1043A0"/>
                 </shape>
             </item>
         </layer-list>
