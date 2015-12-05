@@ -1,9 +1,9 @@
 package com.example.magdiel.taxiseguro;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -14,7 +14,7 @@ import android.widget.EditText;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Modifica extends Activity implements View.OnClickListener{
+public class Modifica extends AppCompatActivity implements View.OnClickListener{
 
     private Button b_confirmar;
     private Resources resources;
