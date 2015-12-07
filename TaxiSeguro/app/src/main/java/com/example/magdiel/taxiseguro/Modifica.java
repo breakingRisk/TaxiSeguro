@@ -1,6 +1,5 @@
 package com.example.magdiel.taxiseguro;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.os.Vibrator;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Modifica extends Activity implements View.OnClickListener{
+public class Modifica extends AppCompatActivity implements View.OnClickListener{
 
     private Button b_confirmar;
     private Resources resources;
@@ -168,9 +168,9 @@ public class Modifica extends Activity implements View.OnClickListener{
         recibidoMail = (String)getIntent().getExtras().getString("mail");
 
         //Asignamos texto a los editables
-        nombre.setHint(recibidoNombre);
+        /*nombre.setHint(recibidoNombre);
         correo.setText(recibidoMail);
-        telefono.setHint(recibidoPhone);
+        telefono.setHint(recibidoPhone);*/
     }
     private void initViews(){
         resources = getResources();
