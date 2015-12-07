@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -21,6 +22,7 @@ public class vistaPedido extends AppCompatActivity implements GoogleMap.OnMapCli
     GoogleMap mapa;
     MapView mapView;
     private final LatLng UPV = new LatLng(39.481106, -0.340987);
+    private RelativeLayout rel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,17 @@ public class vistaPedido extends AppCompatActivity implements GoogleMap.OnMapCli
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         googleMap.setMyLocationEnabled(true);*/
 
+        rel = (RelativeLayout)findViewById(R.id.agradecimientos);
+        rel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (rel.getVisibility() == RelativeLayout.VISIBLE) {
+                    rel.setVisibility(RelativeLayout.GONE);
+                } else  {
+                    rel.setVisibility(RelativeLayout.VISIBLE);
+                }
+            }
+        });
         mapView = (MapView)findViewById(R.id.mimap);
         mapView.onCreate(savedInstanceState);
 
