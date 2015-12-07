@@ -7,10 +7,9 @@
     android:clickable="true"
     android:nestedScrollingEnabled="true"
     android:visibility="visible"
-    android:background="#e0f2ff"
     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
+    xmlns:android="http://schemas.android.com/apk/res/android"
+   >
 
 
     <Button
