@@ -1,10 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        mapas {
+            keyAlias 'prueba'
+            keyPassword 'catscats-key'
+            storeFile file('/Users/magdiel/Documents/AESTUDIO/TAXI_MERGE/llave_app.keystore')
+            storePassword 'catscats-key'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
     useLibrary 'org.apache.http.legacy'
-
     defaultConfig {
         applicationId "com.example.magdiel.taxiseguro"
         minSdkVersion 15
@@ -21,6 +28,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            signingConfig signingConfigs.mapas
+        }
     }
 }
 
@@ -30,4 +40,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.android.support:design:23.1.0'
     compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'com.google.android.gms:play-services:8.3.0'
+
 }

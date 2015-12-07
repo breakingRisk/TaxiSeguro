@@ -43,7 +43,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private Httppostaux post;
 
     private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";   //Expresión regular para validar correo
-    private static final String IP = "169.254.23.72";
+    private static final String IP = "169.254.151.69";
     private static final String IP_SERVER = "http://" + IP + "/taxiSeguro/acces.php";
 
 
@@ -116,7 +116,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             contr = params[1];
 
             //Enviamos, recibimos y analizamos los datos en segundo plano.
-            if(loginstatus(usuario, contr) == true) {
+            if(loginstatus(usuario, contr)) {
                 return "OK";  //Login válido
             } else {
                 return "ERR"; //Login inválido
@@ -133,7 +133,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
             if(result.equals("OK")) {
                 Intent logueado = new Intent(Login.this, pedirTaxi.class);
-                logueado.putExtra("user", usuario);
+                logueado.putExtra("user", usera);
                 startActivity(logueado);
             } else {
                 err_login();
@@ -199,7 +199,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         usera = user.getText().toString().trim();
         passa = pass.getText().toString().trim();
 
-        return (!isEmptyFields(usera, passa) && hasSizeValid(usera, passa) && validateEmail(usera));
+        return (!isEmptyFields(usera, passa) && hasSizeValid(usera, passa) /*&& validateEmail(usera)*/);
     }
 
     /*
@@ -271,9 +271,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 Toast.LENGTH_SHORT);
         toast1.show();
     }
-
-
-
 
     @Override
     public void onClick(View v) {

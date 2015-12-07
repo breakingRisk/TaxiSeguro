@@ -16,6 +16,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class pedirTaxi extends ActionBarActivity implements View.OnClickListener {
 
 
@@ -25,6 +28,7 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
     private ImageButton pop1;
     private Button origenboton;
     private Button destinoboton;
+    private Button peticionB;
     private TextView registro;
     private EditText calleOr;
     private EditText colOr;
@@ -35,7 +39,12 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
     private Resources resources;
     private TextView origenTable;
     private TextView destinoTable;
-
+    private static final String PATTERN_ADDRESS = "^[A-Za-z0-9áéíóúñü#.-/]{2,}([\\s][A-Za-z0-9áéíóúñü#.-/]{2,})*$";
+    private static final String PATTERN_POSTAL = "^([0-9]{5})$";
+    private String email;
+    private TextView editable;
+    boolean orValid;
+    boolean desValid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +61,18 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
         destinoTable = (TextView)findViewById(R.id.destinotexto);
         origenboton = (Button)findViewById(R.id.botonOrigen);
         destinoboton = (Button)findViewById(R.id.botonDestino);
+        peticionB = (Button)findViewById(R.id.peticion);
         pop.setOnClickListener(this);
         pop1.setOnClickListener(this);
         origenTable.setOnClickListener(this);
         destinoTable.setOnClickListener(this);
         registro.setOnClickListener(this);
+        peticionB.setOnClickListener(this);
         Button verifOrigen = (Button)findViewById(R.id.botonOrigen);
         verifOrigen.setOnClickListener(this);
+        email = (String)getIntent().getExtras().getString("user");  //Recibimos texto de Login.java
+        TextView textoemail = (TextView)findViewById(R.id.email);
+
     }
 
     /*
@@ -83,6 +97,7 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
         switch (id) {
             case R.id.to_perfil:  //Nos vamos al perfil
                 optionToolbar = new Intent(this, Perfil.class);
+                optionToolbar.putExtra("user", email);
                 startActivity(optionToolbar);
                 return true;
 
@@ -94,7 +109,6 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
             default:
                 return super.onOptionsItemSelected(item);
         }
-
 
     }
 
@@ -147,7 +161,8 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
         String colO = colOr.getText().toString().trim();
         String cpO = cpOr.getText().toString().trim();
 
-        return (!isEmptyFieldsOr(calleO, colO, cpO) && hasSizeValidOr(calleO, colO, cpO));
+        return (!isEmptyFieldsOr(calleO, colO, cpO) && hasSizeValidOr(calleO, colO, cpO)
+                && validateCalleOr(calleO) && validateColOr(colO) && validateCpOr(cpO));
     }
 
     private boolean validateFieldsDes() {
@@ -155,7 +170,8 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
         String colD = colDes.getText().toString().trim();
         String cpD = cpDes.getText().toString().trim();
 
-        return (!isEmptyFieldsDes(calleD, colD, cpD) && hasSizeValidDes(calleD, colD, cpD));
+        return (!isEmptyFieldsDes(calleD, colD, cpD) && hasSizeValidDes(calleD, colD, cpD)
+        && validateCalleDes(calleD) && validateColDes(colD) && validateCpDes(cpD));
     }
 
     private boolean isEmptyFieldsOr(String calle, String col, String cp) {
@@ -231,6 +247,132 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
         return true;
     }
 
+    /*
+    * Valida que el campo del usuario tenga formato de email. Ej. "example.email@domain.com" usando una expresión regular
+    * @email campo a validar
+    * returns true si el campoi tiene el formato adecuado, en otro caso devuelve false
+    * */
+    private boolean validateCalleOr(String calle) {
+
+        // Compiles the given regular expression into a pattern.
+        Pattern pattern = Pattern.compile(PATTERN_ADDRESS);
+
+        // Match the given input against this pattern
+        Matcher matcher = pattern.matcher(calle);
+        boolean bandera = matcher.matches();
+        if (!bandera) {
+            calleOr.requestFocus();
+            calleOr.setError("Formato no válido");
+            return false;
+        }
+        return true;
+    }
+
+    /*
+    * Valida que el campo del usuario tenga formato de email. Ej. "example.email@domain.com" usando una expresión regular
+    * @email campo a validar
+    * returns true si el campoi tiene el formato adecuado, en otro caso devuelve false
+    * */
+    private boolean validateColOr(String col) {
+
+        // Compiles the given regular expression into a pattern.
+        Pattern pattern = Pattern.compile(PATTERN_ADDRESS);
+
+        // Match the given input against this pattern
+        Matcher matcher = pattern.matcher(col);
+        boolean bandera = matcher.matches();
+        if (!bandera) {
+            colOr.requestFocus();
+            colOr.setError("Formato no válido");
+            return false;
+        }
+        return true;
+    }
+
+    /*
+    * Valida que el campo del usuario tenga formato de email. Ej. "example.email@domain.com" usando una expresión regular
+    * @email campo a validar
+    * returns true si el campoi tiene el formato adecuado, en otro caso devuelve false
+    * */
+    private boolean validateCpOr(String cp) {
+
+        // Compiles the given regular expression into a pattern.
+        Pattern pattern = Pattern.compile(PATTERN_POSTAL);
+
+        // Match the given input against this pattern
+        Matcher matcher = pattern.matcher(cp);
+        boolean bandera = matcher.matches();
+        if (!bandera) {
+            cpOr.requestFocus();
+            cpOr.setError("Debe contener 5 números");
+            return false;
+        }
+        return true;
+    }
+
+    /*
+    * Valida que el campo del usuario tenga formato de email. Ej. "example.email@domain.com" usando una expresión regular
+    * @email campo a validar
+    * returns true si el campoi tiene el formato adecuado, en otro caso devuelve false
+    * */
+    private boolean validateCalleDes(String calle) {
+
+        // Compiles the given regular expression into a pattern.
+        Pattern pattern = Pattern.compile(PATTERN_ADDRESS);
+
+        // Match the given input against this pattern
+        Matcher matcher = pattern.matcher(calle);
+        boolean bandera = matcher.matches();
+        if (!bandera) {
+            calleDes.requestFocus();
+            calleDes.setError("Formato no válido");
+            return false;
+        }
+        return true;
+    }
+
+    /*
+    * Valida que el campo del usuario tenga formato de email. Ej. "example.email@domain.com" usando una expresión regular
+    * @email campo a validar
+    * returns true si el campoi tiene el formato adecuado, en otro caso devuelve false
+    * */
+    private boolean validateColDes(String col) {
+
+        // Compiles the given regular expression into a pattern.
+        Pattern pattern = Pattern.compile(PATTERN_ADDRESS);
+
+        // Match the given input against this pattern
+        Matcher matcher = pattern.matcher(col);
+        boolean bandera = matcher.matches();
+        if (!bandera) {
+            colDes.requestFocus();
+            colDes.setError("Formato no válido");
+            return false;
+        }
+        return true;
+    }
+
+    /*
+    * Valida que el campo del usuario tenga formato de email. Ej. "example.email@domain.com" usando una expresión regular
+    * @email campo a validar
+    * returns true si el campoi tiene el formato adecuado, en otro caso devuelve false
+    * */
+    private boolean validateCpDes(String cp) {
+
+        // Compiles the given regular expression into a pattern.
+        Pattern pattern = Pattern.compile(PATTERN_POSTAL);
+
+        // Match the given input against this pattern
+        Matcher matcher = pattern.matcher(cp);
+        boolean bandera = matcher.matches();
+        if (!bandera) {
+            cpDes.requestFocus();
+            cpDes.setError("Debe contener 5 números");
+            return false;
+        }
+        return true;
+    }
+
     /**
      * Limpa os ícones e as mensagens de erro dos campos desejados
      *
@@ -264,17 +406,27 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
                 }
                 break;
             case R.id.botonOrigen:
-                if(mostrarOr.getVisibility()== View.VISIBLE ){
-                    mostrarOr.setVisibility(View.GONE);
+                if(validateFieldsOr()) {
+                    if (mostrarOr.getVisibility() == View.VISIBLE) {
+                        mostrarOr.setVisibility(View.GONE);
+                    } else {
+                        mostrarOr.setVisibility(View.VISIBLE);
+                    }
+                    orValid = true;
                 } else {
-                    mostrarOr.setVisibility(View.VISIBLE);
+                    orValid = false;
                 }
                 break;
             case R.id.botonDestino:
-                if(mostrarDes.getVisibility()== View.VISIBLE ){
-                    mostrarDes.setVisibility(View.GONE);
+                if(validateFieldsDes()) {
+                    if (mostrarDes.getVisibility() == View.VISIBLE) {
+                        mostrarDes.setVisibility(View.GONE);
+                    } else {
+                        mostrarDes.setVisibility(View.VISIBLE);
+                    }
+                    desValid = true;
                 } else {
-                    mostrarDes.setVisibility(View.VISIBLE);
+                    desValid = true;
                 }
                 break;
             case R.id.ubicarme:
@@ -294,9 +446,15 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
                     mostrarDes.setVisibility(View.VISIBLE);
                 }
                 break;
-
-
-
+            case R.id.peticion:
+                if ( orValid ) {
+                    Intent aPeticion = new Intent(this, vistaPedido.class);
+                    aPeticion.putExtra("user", email);
+                    startActivity(aPeticion);
+                } else {
+                    Toast.makeText(this, "Por favor ingresa tu ubicación", Toast.LENGTH_SHORT).show();
+                }
+                break;
         }
     }
 

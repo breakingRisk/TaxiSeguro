@@ -7,10 +7,11 @@
     android:paddingRight="0dp"
     android:paddingTop="0dp"
     android:paddingBottom="0dp"
-    android:background="@color/blanco"
+    android:background="@drawable/bgt101"
     tools:context="com.example.magdiel.taxiseguro.pedirTaxi"
     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <!-- App Bar -->
     <android.support.design.widget.AppBarLayout
@@ -64,12 +65,11 @@
                         android:layout_width="@dimen/fab_button_diameter"
                         android:layout_height="@dimen/fab_button_diameter"
                         android:background="@drawable/fab_shape"
-                        android:src="@drawable/map_icon"
+                        android:src="@drawable/ic_person_pin_circle_black_24dp"
                         android:tint="@android:color/white"
                         android:layout_alignParentTop="true"
                         android:layout_alignLeft="@+id/taxi"
                         android:layout_alignStart="@+id/taxi" />
-
                     <TextView
                         android:id="@+id/origentexto"
                         android:layout_width="wrap_content"
@@ -79,7 +79,6 @@
                         android:textSize="22sp"
                         android:gravity="center"
                         android:padding="18dp"/>
-
                 </TableRow>
 
             </TableLayout>
@@ -93,26 +92,65 @@
                 android:layout_margin="15dp"
                 android:padding="15dp">
 
-                <EditText android:id="@+id/txtCalleO"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_calle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="fill_parent"
-                    android:hint="Calle"
-                    android:inputType="text"
-                    android:textColor="@color/negro"/>
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
 
-                <EditText android:id="@+id/txtColO"
-                    android:layout_height="wrap_content"
-                    android:layout_width="fill_parent"
-                    android:hint="Colonia"
-                    android:inputType="text"
-                    android:textColor="@color/negro"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Calle"
+                        android:inputType="text"
+                        android:id="@+id/txtCalleO"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/negro"
+                        />
 
-                <EditText android:id="@+id/txtCpO"
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_col"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="fill_parent"
-                    android:hint="Cp"
-                    android:inputType="number"
-                    android:textColor="@color/negro"/>
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Colonia"
+                        android:inputType="text"
+                        android:id="@+id/txtColO"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/negro"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_cp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Código postal"
+                        android:inputType="number"
+                        android:id="@+id/txtCpO"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/negro"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
 
                 <TextView android:id="@+id/ubicarme"
                     android:layout_width="fill_parent"
@@ -122,7 +160,7 @@
                     android:text="Ubicarme!"
                     android:gravity="center"
                     android:textSize="20dip"
-                    android:textColor="#0b84aa"/>
+                    android:textColor="#ff5252"/>
 
                 <Button
                     android:id="@+id/botonOrigen"
@@ -162,7 +200,7 @@
                         android:layout_width="@dimen/fab_button_diameter"
                         android:layout_height="@dimen/fab_button_diameter"
                         android:background="@drawable/fab_shape"
-                        android:src="@drawable/map_icon"
+                        android:src="@drawable/ic_place_black_24dp"
                         android:tint="@android:color/white"
                         android:layout_alignParentTop="true"
                         android:layout_alignLeft="@+id/taxi"
@@ -191,26 +229,65 @@
                 android:layout_margin="15dp"
                 android:padding="15dp">
 
-                <EditText android:id="@+id/txtCalleD"
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_called"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="fill_parent"
-                    android:hint="Calle"
-                    android:inputType="text"
-                    android:textColor="@color/negro"/>
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
 
-                <EditText android:id="@+id/txtColD"
-                    android:layout_height="wrap_content"
-                    android:layout_width="fill_parent"
-                    android:hint="Colonia"
-                    android:inputType="text"
-                    android:textColor="@color/negro"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Calle"
+                        android:inputType="text"
+                        android:id="@+id/txtCalleD"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/negro"
+                        />
 
-                <EditText android:id="@+id/txtCpD"
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_cold"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_width="fill_parent"
-                    android:hint="Cp"
-                    android:inputType="number"
-                    android:textColor="@color/negro"/>
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Colonia"
+                        android:inputType="text"
+                        android:id="@+id/txtColD"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/negro"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_cpd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Código postal"
+                        android:inputType="text"
+                        android:id="@+id/txtCpD"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="@color/negro"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
 
                 <Button
                     android:id="@+id/botonDestino"
@@ -226,7 +303,18 @@
                     />
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/negro"
+                android:text=""
+                android:textSize="30sp"
+                android:id="@+id/email"/>
+
         </LinearLayout>
+
+
     </ScrollView>
     <LinearLayout
         android:layout_width="fill_parent"
@@ -234,6 +322,7 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/peticion"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Pedir mi taxi"
