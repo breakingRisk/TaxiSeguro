@@ -51,7 +51,10 @@
                 android:textSize="18dp"
                 android:padding="15sp"
                 android:layout_margin="25sp"
-                android:hint="@string/correo"/>
+                android:hint="@string/correo"
+                android:editable="false"
+                android:enabled="false"
+                android:focusable="false"/>
 
             <EditText
                 android:layout_width="wrap_content"

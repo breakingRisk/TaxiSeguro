@@ -38,6 +38,9 @@ public class Modifica extends Activity implements View.OnClickListener{
     private String nombreS;
     private String correoC;
     private String telefonoS;
+    String recibidoNombre;
+    String recibidoPhone;
+    String recibidoMail;
     private static final String PATTERN_EMAIL = "^([\\da-z_\\.-]+)@([\\da-z\\.-]+)\\.([a-z\\.]{2,6})$";
     //Expresión regular para validar correo
     private static final String PATTERN_NOMBRE = "[A-Za-záéíóúñü]{2,}([\\s][A-Za-záéíóúñü]{2,})*$";
@@ -160,13 +163,13 @@ public class Modifica extends Activity implements View.OnClickListener{
         initViews();
         post = new Httppostaux();
 
-        String recibidoNombre = (String)getIntent().getExtras().getString("nombre");
-        String recibidoPhone = (String)getIntent().getExtras().getString("phone");
-        String recibidoMail = (String)getIntent().getExtras().getString("mail");
+        recibidoNombre = (String)getIntent().getExtras().getString("nombre");
+        recibidoPhone = (String)getIntent().getExtras().getString("phone");
+        recibidoMail = (String)getIntent().getExtras().getString("mail");
 
         //Asignamos texto a los editables
         nombre.setHint(recibidoNombre);
-        correo.setHint(recibidoMail);
+        correo.setText(recibidoMail);
         telefono.setHint(recibidoPhone);
     }
     private void initViews(){
