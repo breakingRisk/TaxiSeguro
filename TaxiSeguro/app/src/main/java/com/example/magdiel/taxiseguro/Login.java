@@ -43,7 +43,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private Httppostaux post;
 
     private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";   //Expresión regular para validar correo
-    private static final String IP = "169.254.48.133";
+    private static final String IP = "192.168.1.71";
     private static final String IP_SERVER = "http://" + IP + "/taxiSeguro/acces.php";
 
 

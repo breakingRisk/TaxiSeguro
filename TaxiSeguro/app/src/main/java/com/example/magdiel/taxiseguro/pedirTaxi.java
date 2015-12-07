@@ -28,6 +28,7 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
     private ImageButton pop1;
     private Button origenboton;
     private Button destinoboton;
+    private Button peticionB;
     private TextView registro;
     private EditText calleOr;
     private EditText colOr;
@@ -42,6 +43,8 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
     private static final String PATTERN_POSTAL = "^([0-9]{5})$";
     private String email;
     private TextView editable;
+    boolean orValid;
+    boolean desValid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,14 +61,18 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
         destinoTable = (TextView)findViewById(R.id.destinotexto);
         origenboton = (Button)findViewById(R.id.botonOrigen);
         destinoboton = (Button)findViewById(R.id.botonDestino);
+        peticionB = (Button)findViewById(R.id.peticion);
         pop.setOnClickListener(this);
         pop1.setOnClickListener(this);
         origenTable.setOnClickListener(this);
         destinoTable.setOnClickListener(this);
         registro.setOnClickListener(this);
+        peticionB.setOnClickListener(this);
         Button verifOrigen = (Button)findViewById(R.id.botonOrigen);
         verifOrigen.setOnClickListener(this);
         email = (String)getIntent().getExtras().getString("user");  //Recibimos texto de Login.java
+        TextView textoemail = (TextView)findViewById(R.id.email);
+        textoemail.setText(email);
 
     }
 
@@ -103,7 +110,6 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
             default:
                 return super.onOptionsItemSelected(item);
         }
-
 
     }
 
@@ -407,6 +413,9 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
                     } else {
                         mostrarOr.setVisibility(View.VISIBLE);
                     }
+                    orValid = true;
+                } else {
+                    orValid = false;
                 }
                 break;
             case R.id.botonDestino:
@@ -416,6 +425,9 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
                     } else {
                         mostrarDes.setVisibility(View.VISIBLE);
                     }
+                    desValid = true;
+                } else {
+                    desValid = true;
                 }
                 break;
             case R.id.ubicarme:
@@ -433,6 +445,15 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
                     mostrarDes.setVisibility(View.GONE);
                 } else {
                     mostrarDes.setVisibility(View.VISIBLE);
+                }
+                break;
+            case R.id.peticion:
+                if ( orValid ) {
+                    Intent aPeticion = new Intent(this, vistaPedido.class);
+                    aPeticion.putExtra("user", email);
+                    startActivity(aPeticion);
+                } else {
+                    Toast.makeText(this, "Por favor ingresa tu ubicación", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
