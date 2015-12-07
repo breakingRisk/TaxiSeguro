@@ -7,8 +7,9 @@
     android:layout_height="wrap_content"
     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
     tools:context="com.example.magdiel.taxiseguro.Registro"
-    android:background="#e0f2ff"
-    android:orientation="vertical">
+    android:background="@drawable/bgt102"
+    android:orientation="vertical"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,90 +18,147 @@
         android:scrollbars="none"
         >
 
-        <LinearLayout
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="553dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:padding="15dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre"
+                android:inputType="text"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/negro"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <!--<EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_marginTop="70dp"
-            android:padding="15dp"
-            >
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:hint="Nombre"
-                android:id="@+id/user"
-                android:layout_above="@+id/phone"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="18dp"
-                android:padding="10dp"
-                />
-               
+            android:inputType="textPersonName"
+            android:hint="Nombre"
+            android:id="@+id/user"
+            android:layout_above="@+id/phone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="18dp"
+            android:padding="10dp"
+            />-->
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_vertical">
 
             <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
                 android:id="@+id/phone"
-                android:hint="@string/telefono"
-                android:layout_above="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone"
+                android:inputType="number"
+                android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="18dp"
-                android:padding="10dp"
+                android:textColor="@color/negro"/>
 
-                />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <!--<EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/phone"
+            android:hint="@string/telefono"
+            android:layout_above="@+id/email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="18dp"
+            android:padding="10dp"
+
+            />-->
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_vertical">
 
             <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:ems="10"
                 android:id="@+id/email"
-                android:hint="@string/email"
-                android:autoText="false"
-                android:layout_marginBottom="70dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:padding="10dp"
+                android:textColor="@color/negro"/>
 
-                />
+        </android.support.design.widget.TextInputLayout>
 
+        <!--<EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/email"
+            android:hint="@string/email"
+            android:autoText="false"
+            android:layout_marginBottom="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
 
+            />-->
 
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Siguiente"
+            android:id="@+id/registro"
+            android:background="#00bfa5"
+            android:padding = "10dp"
+            android:textColor="#fff"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:textSize="22sp"
+            />
 
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Siguiente"
-                android:id="@+id/registro"
-                android:background="#00bfa5"
-                android:padding = "10dp"
-                android:textColor="#fff"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginBottom="10dp"
-                android:textSize="22sp"
-                />
+        <TextView android:id="@+id/linklog"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:layout_marginBottom="40dip"
+            android:text=" Ya tienes cuenta, ¡accede!"
+            android:gravity="center"
+            android:textSize="20dip"
+            android:textColor="#00bfa5"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
 
-            <TextView android:id="@+id/linklog"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dip"
-                android:layout_marginBottom="40dip"
-                android:text=" Ya tienes cuenta, ¡accede!"
-                android:gravity="center"
-                android:textSize="20dip"
-                android:textColor="#00bfa5"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"/>
-
-        </LinearLayout>
-
-    </ScrollView>
+    </LinearLayout>
 
 </LinearLayout>

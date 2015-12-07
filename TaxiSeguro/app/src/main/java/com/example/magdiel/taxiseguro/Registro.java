@@ -33,7 +33,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
     private ProgressDialog pDialog;
     private Httppostaux post;
 
-    private static final String IP = "192.168.1.71";
+    private static final String IP = "169.254.151.69";
     private static final String IP_SERVER = "http://" + IP + "/taxiSeguro/register.php";
 
     private Button cuenta;

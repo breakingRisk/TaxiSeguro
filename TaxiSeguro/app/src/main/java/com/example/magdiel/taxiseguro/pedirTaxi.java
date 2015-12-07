@@ -72,7 +72,6 @@ public class pedirTaxi extends ActionBarActivity implements View.OnClickListener
         verifOrigen.setOnClickListener(this);
         email = (String)getIntent().getExtras().getString("user");  //Recibimos texto de Login.java
         TextView textoemail = (TextView)findViewById(R.id.email);
-        textoemail.setText(email);
 
     }
 

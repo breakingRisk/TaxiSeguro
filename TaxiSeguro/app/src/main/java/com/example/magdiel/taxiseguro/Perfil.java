@@ -30,7 +30,7 @@ public class Perfil extends Activity implements View.OnClickListener {
     private TextView phone;
     private TextView mail;
 
-    private static final String IP = "192.168.1.71";
+    private static final String IP = "169.254.151.69";
     private static final String IP_SERVER = "http://" + IP + "/taxiSeguro/muestrauser.php";
 
     Button b_modificaP;

@@ -26,6 +26,15 @@
 
     </android.support.design.widget.AppBarLayout>
 
+
+    <!-- map -->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mimap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.google.android.gms.maps.MapView>
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,6 +66,7 @@
             android:paddingTop="10dp"/>
 
     </RelativeLayout>
+
 
 
 </RelativeLayout>
