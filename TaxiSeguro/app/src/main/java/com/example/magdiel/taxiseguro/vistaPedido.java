@@ -21,7 +21,7 @@ public class vistaPedido extends AppCompatActivity implements GoogleMap.OnMapCli
     String recibidoCorreo;
     GoogleMap mapa;
     MapView mapView;
-    private final LatLng UPV = new LatLng(39.481106, -0.340987);
+    private final LatLng UPV = new LatLng(19.323956, -99.178960);
     private RelativeLayout rel;
 
     @Override
@@ -52,7 +52,7 @@ public class vistaPedido extends AppCompatActivity implements GoogleMap.OnMapCli
 
         mapa = mapView.getMap();
         mapa.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        mapa.moveCamera(CameraUpdateFactory.newLatLngZoom(UPV, 18));
+        mapa.moveCamera(CameraUpdateFactory.newLatLngZoom(UPV, 17));
         mapa.setMyLocationEnabled(true);
         mapa.getUiSettings().setZoomControlsEnabled(false);
         mapa.getUiSettings().setCompassEnabled(true);
@@ -131,7 +131,7 @@ public class vistaPedido extends AppCompatActivity implements GoogleMap.OnMapCli
     public void animateCamera(View view) {
         if (mapa.getMyLocation() != null)
             mapa.animateCamera(CameraUpdateFactory.newLatLngZoom(
-                    new LatLng( mapa.getMyLocation().getLatitude(), mapa.getMyLocation().getLongitude()), 18));
+                    new LatLng( mapa.getMyLocation().getLatitude(), mapa.getMyLocation().getLongitude()), 17));
     }
 
     public void addMarker(View view) {

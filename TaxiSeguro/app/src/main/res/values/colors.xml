@@ -9,4 +9,5 @@
     <color name="blanco">#fff</color>
     <color name="topBar">#009688</color>
     <color name="trans">#BF00bfa5</color>
+    <color name="gray">#e8e8e8</color>
 </resources>
